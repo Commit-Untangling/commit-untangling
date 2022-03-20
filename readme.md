@@ -78,7 +78,7 @@ Install ```torch_sparse``` by following the Instruction from [pytorch_sparse](ht
 
 Install ```torch_geometric``` by following the Instruction from [torch_geometric](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html).
 
-See [requirement.txt](https://github.com/Commit-Untangling//blob/main/requirement.txt) for other required packages. 
+See [requirement.txt](https://github.com/Commit-Untangling/blob/main/requirement.txt) for other required packages. 
 
 
 ## Instruction_to_Run_UTango
