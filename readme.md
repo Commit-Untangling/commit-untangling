@@ -60,7 +60,7 @@ If you want to use your own dataset, please prepare the data as follow:
 	
 	1> ```Data.x = Node_feature_vector```
 	
-	2> ```Data.y = [label_1, ..., label_7]```
+	2> ```Data.y = labels```
 	
 	3> ```Data.edge_index = edge_list```
 	
@@ -68,7 +68,7 @@ Where ```Node_feature_vector``` is ```N*R``` sized torch tensors that represent 
 
 ```edge_list``` is  the matrixs to represent the graph edges for each method. Please refer to ```torch_geometric``` package for more details.
 
-```label_1, ... ,label_7``` are the true labels for seven different vulnerability assessment types.
+```labels``` are the true labels for each node, each label could be ```0``` for unchanged node, ```n``` for the Nth concern.
 
 ## Requirement
 
@@ -89,6 +89,6 @@ Download the UTango source code and run ```main.py``` to see the result for our 
 
 Because the dataset that used in our approaches contains big graphs which are huge and the model may take a long time to well trained and tested. To quickly try our model, please download our demo that contains just limited amount of data. 
 
-Demo download: https://drive.google.com/file/d/1_79HGjGQ50o4XCweoVd1XXh0xRc_pRY4/view?usp=sharing
+Demo download: https://drive.google.com/file/d/1c-p6xsLSs9gp2BlswGJQt6Z1fC8Xk-xb/view?usp=sharing
 
 Put ```model.pt``` and ```data``` in the root folder of UTango and then run ```run_demo.py``` to see the results.
