@@ -89,6 +89,6 @@ Download the UTango source code and run ```main.py``` to see the result for our 
 
 Because the dataset that used in our approaches contains big graphs which are huge and the model may take a long time to well trained and tested. To quickly try our model, please download our demo that contains just limited amount of data. 
 
-Demo download: https://drive.google.com/file/d/1cgvtxggeQ6F6LoxVSbKtsvdKICHWLlNj/view?usp=sharing
+Demo download: https://drive.google.com/file/d/1_79HGjGQ50o4XCweoVd1XXh0xRc_pRY4/view?usp=sharing
 
 Put ```model.pt``` and ```data``` in the root folder of UTango and then run ```run_demo.py``` to see the results.
