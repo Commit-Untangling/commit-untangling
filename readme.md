@@ -46,7 +46,7 @@ relatively higher accuracy than the state-of-the-art approaches.
 
 ### Preprocessed Dataset
 
-We published our processed dataset at https://drive.google.com/file/d/1Ue-0r31F7pncH742Iv31LIzqL-t2XMEp/view?usp=sharing
+We published our processed dataset at https://drive.google.com/file/d/1WdP9SI4T8H_8Tb-zAKIat_o70sQuUbTl/view?usp=sharing
 
 Please create a folder named ```data``` under the root folder of UTango, download the dataset, unzip it and put all files in ```./data``` folder.
 
@@ -54,13 +54,13 @@ Please create a folder named ```data``` under the root folder of UTango, downloa
 
 If you want to use your own dataset, please prepare the data as follow:
 
-1. The data are stored in ```data_n.pt```
+1. The data are stored in ```data_n.pt``` and ordered based on the tangled commit last modified time.
 
-2. Each ```data_n.pt``` include a set of ```Data``` object from ```torch_geometric```. Each ```Data``` represent a method in a tangled commit:
+2. Each ```data_n.pt``` include a set of ```Data``` object from ```torch_geometric``` with one extra element for the ground truth labels. Each ```Data``` represent a method in a tangled commit:
 	
 	1> ```Data.x = Node_feature_vector```
 	
-	2> ```Data.y = [label_1, ..., label_7]```
+	2> ```Data.y = Context_info```
 	
 	3> ```Data.edge_index = edge_list```
 	
@@ -68,7 +68,7 @@ Where ```Node_feature_vector``` is ```N*R``` sized torch tensors that represent 
 
 ```edge_list``` is  the matrixs to represent the graph edges for each method. Please refer to ```torch_geometric``` package for more details.
 
-```label_1, ... ,label_7``` are the true labels for seven different vulnerability assessment types.
+```Context_info``` is an array that has the same length as the node numbers on the graph. Each element inside represent one node. If it is not a code change node, the value for that position is 0. If it is the code change node, the element is an array that include all index for the context nodes.
 
 ## Requirement
 
@@ -78,7 +78,7 @@ Install ```torch_sparse``` by following the Instruction from [pytorch_sparse](ht
 
 Install ```torch_geometric``` by following the Instruction from [torch_geometric](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html).
 
-See [requirement.txt](https://github.com/Commit-Untangling//blob/main/requirement.txt) for other required packages. 
+See [requirement.txt](https://github.com/Commit-Untangling/blob/main/requirement.txt) for other required packages. 
 
 
 ## Instruction_to_Run_UTango
@@ -89,6 +89,6 @@ Download the UTango source code and run ```main.py``` to see the result for our 
 
 Because the dataset that used in our approaches contains big graphs which are huge and the model may take a long time to well trained and tested. To quickly try our model, please download our demo that contains just limited amount of data. 
 
-Demo download: https://drive.google.com/file/d/1cgvtxggeQ6F6LoxVSbKtsvdKICHWLlNj/view?usp=sharing
+Demo download: https://drive.google.com/file/d/1C5BZjnVmM4gIrL58crsLJRP3HSLiCSE2/view?usp=sharing
 
 Put ```model.pt``` and ```data``` in the root folder of UTango and then run ```run_demo.py``` to see the results.
