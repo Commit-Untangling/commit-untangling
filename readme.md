@@ -60,7 +60,9 @@ If you want to use your own dataset, please prepare the data as follow:
 	
 	1> ```Data.x = Node_feature_vector```
 	
+
 	2> ```Data.y = Context_info```
+
 	
 	3> ```Data.edge_index = edge_list```
 	
